@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TrackingInfoRepository extends JpaRepository<Tracking, Long> {
-    List<Tracking> findByOrderId(String orderId);
+    List<Tracking> findByOrderIdAndItemId(int orderId, int itemId);
 }
