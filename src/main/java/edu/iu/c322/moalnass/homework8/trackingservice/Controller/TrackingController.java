@@ -30,12 +30,4 @@ public class TrackingController {
         tracking.setDate(new Date());
         repository.save(tracking);
     }
-    @ResponseStatus(HttpStatus.CREATED)
-    @PutMapping("/{orderId}")
-    public long create(@RequestBody Tracking tracking, @PathVariable int orderId){
-        tracking.setOrderId(orderId);
-        tracking.setDate(new Date());
-        Tracking addedTracking = repository.save(tracking);
-        return addedTracking.getId();
-    }
 }
